@@ -28,6 +28,9 @@
   <!-- Cornerstone CSS ================================================== -->
   <link rel="stylesheet" href="https://www.kajabicornerstone.com/stylesheets/cornerstone-beta-1.1.1.css">
 
+
+
+
   <!-- CSS Settings Variables ================================================== -->
   {% include "css-variables" %}
 
@@ -36,6 +39,9 @@
   {{ 'theme.css' | asset_url | stylesheet_tag }}
   {{ 'overrides.css' | asset_url | stylesheet_tag }}
 
+  <!-- Dashkit CSS -->
+  <link rel="stylesheet" href="../assets/dash-theme.min.css">
+  
   <!-- Header hook ====================================================== -->
   {% content_for_header %}
 
