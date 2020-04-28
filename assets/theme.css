@@ -11240,3 +11240,30 @@ a:focus, button:focus {
 
 .select2-selection__placeholder {
   color: #B1C2D9; }
+
+/*============================================================================
+  #Override Stylesheet
+  #Add Custom Styles Here
+==============================================================================*/
+/* Custom Styles */
+@font-face {
+  font-family: "Larsseit";
+  font-weight: 400;
+  src: url("https://www.sprintwell.com/assets/fonts/Larsseit/Larsseit-Regular.woff2") format("woff2"), url("https://www.sprintwell.com/assets/Larsseit/Larsseit-Regular.woff") format("woff"), url("https://www.sprintwell.com/assets/Larsseit/Larsseit-Regular.eot") format("eot"); }
+
+@font-face {
+  font-family: "Larsseit";
+  font-weight: 500;
+  src: url("https://www.sprintwell.com/assets/Larsseit/Larsseit-Medium.woff2") format("woff2"), url("https://www.sprintwell.com/assets/Larsseit/Larsseit-Medium.woff") format("woff"), url("https://www.sprintwell.com/assets/fonts/Larsseit/Larsseit-Medium.eot") format("eot"); }
+
+@font-face {
+  font-family: "Larsseit";
+  font-weight: 700;
+  src: url("https://www.sprintwell.com/assets/fonts/Larsseit/Larsseit-Bold.woff2") format("woff2"), url("https://www.sprintwell.com/assets/fonts/Larsseit/Larsseit-Bold.woff") format("woff"), url("https://www.sprintwell.com/assets/fonts/Larsseit/Larsseit-Bold.eot") format("eot"); }
+
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, a {
+  font-family: "Larsseit", sans-serif !important;
+  font-weight: 400; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important; }
