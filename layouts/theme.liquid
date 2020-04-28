@@ -5,8 +5,12 @@
   	{% include  "dash-sidebar"%}
 
   	<div class="main-content">
-    {{ content_for_layout }}
-    {% section "footer" %}
+  		<div class="container-fluid">
+  			<div class="row justify-content-center">
+    			{{ content_for_layout }}
+    			{% section "footer" %}
+			</div>
+		</div>
 	</div>
 
     {% include "theme_scripts" %}

@@ -1,0 +1,135 @@
+<div class="col-12 col-lg-10 col-xl-8">
+<div class="row">
+<div class="col-12 col-lg-6 d-flex flex-column">
+
+  {% if products.size > 0 %}
+      {% paginate products by 6 %}
+        {% for product in paginate.collection %}
+          <div class="card card-fill">
+          <!-- Image -->
+          {% if product.thumbnail_url %}
+            <a href="{{ product.url }}">
+              <img src="{{ product.thumbnail_url }}" alt="..." class="card-img-top">
+            </a>
+          {% else %}
+            <a href="{{ product.url }}">
+              <img src="{{ "placeholder.png" | asset_url }}"/>
+            </a>
+          {% endif %} 
+
+          <!-- Body -->
+          <div class="card-body mt-0">
+            <div class="row align-items-center">
+              <div class="col">
+
+                <!-- Title -->
+                <h4 class="mb-2">
+                  <a href="project-overview.html">{{ product.title }}</a>
+                </h4>
+
+                <!-- Subtitle -->
+                {% if product.description != "" %}
+                  <small class="text-muted">
+                    {{ product.description | strip_html | truncate: 160 }}
+                  </small>
+                {% endif %}
+
+              </div>
+              <div class="col-auto">
+
+                <!-- Dropdown -->
+                <div class="dropdown">
+                  <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fe fe-more-vertical"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <a href="#!" class="dropdown-item">
+                      Action
+                    </a>
+                    <a href="#!" class="dropdown-item">
+                      Another action
+                    </a>
+                    <a href="#!" class="dropdown-item">
+                      Something else here
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div> <!-- / .row -->
+          </div>
+
+          <!-- Footer -->
+          <div class="card-footer card-footer-boxed">
+            <div class="row align-items-center">
+              <div class="col">
+                <div class="row align-items-center no-gutters">
+                  <div class="col-auto">
+
+                    <!-- Value -->
+                    <small class="mr-2">29%</small>
+
+                  </div>
+                  <div class="col">
+
+                    <!-- Progress -->
+                    <div class="progress progress-sm">
+                      <div class="progress-bar" role="progressbar" style="width: 29%" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+              <div class="col-auto">
+
+                <!-- Avatar group -->
+                <div class="avatar-group">
+                  <a href="profile-posts.html" class="avatar avatar-xs" data-toggle="tooltip" title="Ab Hadley">
+                    <img src="assets/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
+                  </a>
+                  <a href="profile-posts.html" class="avatar avatar-xs" data-toggle="tooltip" title="Adolfo Hess">
+                    <img src="assets/img/avatars/profiles/avatar-3.jpg" alt="..." class="avatar-img rounded-circle">
+                  </a>
+                  <a href="profile-posts.html" class="avatar avatar-xs" data-toggle="tooltip" title="Daniela Dewitt">
+                    <img src="assets/img/avatars/profiles/avatar-4.jpg" alt="..." class="avatar-img rounded-circle">
+                  </a>
+                  <a href="profile-posts.html" class="avatar avatar-xs" data-toggle="tooltip" title="Miyah Myles">
+                    <img src="assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle">
+                  </a>
+                </div>
+
+              </div>
+            </div> <!-- / .row -->
+          </div>
+          </div>
+        {% endfor %}
+        {% if paginate.pages > 1 %}
+          {% include "pagination" %}
+        {% endif %}
+      {% endpaginate %}
+    {% endif %}
+
+</div>
+</div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Products",
+    "elements": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "My Products"
+      },
+      {
+        "type": "text",
+        "id": "btn",
+        "label": "Button Text",
+        "default": "Enter"
+      }
+    ]
+  }
+{% endschema %}
