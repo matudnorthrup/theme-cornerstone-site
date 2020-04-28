@@ -128,7 +128,6 @@
               <a href="/logout" data-method="delete" class="dropdown-item" kjb-settings-id="{{ 'language_logout' }}">
                 {{ settings.language_logout | member_logout }}
               </a>
-              {{ settings.language_logout | member_logout_link }}
             {% else %}
               <a href="/login" class="dropdown-item" kjb-settings-id="{{ 'language_logout' }}">{{ settings.language_logout | member_login }}</a>
             {% endif %}
