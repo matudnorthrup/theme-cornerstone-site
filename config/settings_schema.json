@@ -42,6 +42,25 @@
       }
     ]
   },
+
+ {
+    "name": "Logo",
+    "elements": [
+      {
+        "type": "header",
+        "content": "Logo"
+      },
+      {
+        "type": "image_picker",
+      "id": "logo",
+      "label": "Logo Image",
+      "fit": "max",
+      "width": 1000,
+      "height": 1000,
+      "info": "Suggested dimensions: 360x80"
+      }
+    ]
+  },
   {
     "name": "Color Scheme",
     "elements": [

@@ -4,10 +4,10 @@
   <body>
   	{% include  "dash-sidebar"%}
 
-    {% section "header" %}
+  	<div class="main-content">
     {{ content_for_layout }}
     {% section "footer" %}
-    {% include "powered_by" %}
+	</div>
 
     {% include "theme_scripts" %}
   </body>
