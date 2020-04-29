@@ -1,10 +1,27 @@
 <div class="col-12 col-lg-10 col-xl-8">
+  <!-- Header -->
+            <div class="header mt-md-5">
+              <div class="header-body">
+
+                <!-- Pretitle -->
+                <h6 class="header-pretitle">
+                  Overview
+                </h6>
+
+                <!-- Title -->
+                <h1 class="header-title">
+                  {{ section.settings.heading }}
+                </h1>
+
+              </div>
+            </div>
+
 <div class="row">
-<div class="col-12 col-lg-6 d-flex flex-column">
 
   {% if products.size > 0 %}
       {% paginate products by 6 %}
         {% for product in paginate.collection %}
+        <div class="col-12 col-lg-6 d-flex flex-column">
           <div class="card card-fill">
           <!-- Image -->
           {% if product.thumbnail_url %}
@@ -31,6 +48,7 @@
                 {% if product.description != "" %}
                   <small class="text-muted">
                     {{ product.description | strip_html | truncate: 160 }}
+                    {{ product.completion }}
                   </small>
                 {% endif %}
 
@@ -82,26 +100,12 @@
               </div>
               <div class="col-auto">
 
-                <!-- Avatar group -->
-                <div class="avatar-group">
-                  <a href="profile-posts.html" class="avatar avatar-xs" data-toggle="tooltip" title="Ab Hadley">
-                    <img src="assets/img/avatars/profiles/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
-                  </a>
-                  <a href="profile-posts.html" class="avatar avatar-xs" data-toggle="tooltip" title="Adolfo Hess">
-                    <img src="assets/img/avatars/profiles/avatar-3.jpg" alt="..." class="avatar-img rounded-circle">
-                  </a>
-                  <a href="profile-posts.html" class="avatar avatar-xs" data-toggle="tooltip" title="Daniela Dewitt">
-                    <img src="assets/img/avatars/profiles/avatar-4.jpg" alt="..." class="avatar-img rounded-circle">
-                  </a>
-                  <a href="profile-posts.html" class="avatar avatar-xs" data-toggle="tooltip" title="Miyah Myles">
-                    <img src="assets/img/avatars/profiles/avatar-5.jpg" alt="..." class="avatar-img rounded-circle">
-                  </a>
-                </div>
 
               </div>
             </div> <!-- / .row -->
           </div>
           </div>
+      </div>
         {% endfor %}
         {% if paginate.pages > 1 %}
           {% include "pagination" %}
@@ -109,7 +113,6 @@
       {% endpaginate %}
     {% endif %}
 
-</div>
 </div>
 </div>
 

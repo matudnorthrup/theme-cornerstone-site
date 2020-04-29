@@ -11262,8 +11262,10 @@ a:focus, button:focus {
   src: url("https://www.sprintwell.com/assets/fonts/Larsseit/Larsseit-Bold.woff2") format("woff2"), url("https://www.sprintwell.com/assets/fonts/Larsseit/Larsseit-Bold.woff") format("woff"), url("https://www.sprintwell.com/assets/fonts/Larsseit/Larsseit-Bold.eot") format("eot"); }
 
 body, p, h1, h2, h3, h4, h5, h6, ul, ol, a {
-  font-family: "Larsseit", sans-serif !important;
-  font-weight: 400; }
+  font-family: "Larsseit", sans-serif; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700 !important; }
+  font-weight: 700; }
+
+.header {
+  border: none; }
