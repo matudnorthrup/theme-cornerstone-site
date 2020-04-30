@@ -18,107 +18,119 @@
   <!-- Product Cards -->
   <div class="row">
 
-    {% if products.size > 0 %}
-        {% paginate products by 6 %}
-          {% for product in paginate.collection %}
-          {% if product.id == 429919 or product.id == 411712 or product.id == 429921 %}
-          <div class="col-12 col-lg-4 d-flex flex-column">
-            <div class="card card-fill">
-            <!-- Image -->
-            {% if product.thumbnail_url %}
-              <a href="{{ product.url }}">
-                <img src="{{ product.thumbnail_url }}" alt="..." class="card-img-top">
-              </a>
-            {% else %}
-              <a href="{{ product.url }}">
-                <img src="{{ "placeholder.png" | asset_url }}"/>
-              </a>
-            {% endif %} 
-
-            <!-- Body -->
-            <div class="card-body mt-0">
-              <div class="row align-items-center">
-                <div class="col">
-
-                  <!-- Title -->
-                  <h4 class="mb-2">
-                    <a href="project-overview.html">{{ product.title }}</a>
-                  </h4>
-
-                  <!-- Subtitle -->
-                  {% if product.description != "" %}
-                    <small class="text-muted">
-                      {{ product.description | strip_html | truncate: 160 }}
-                    </small>
-                  {% endif %}
-
-                </div>
-                <div class="col-auto">
-
-                  <!-- Dropdown -->
-                  <div class="dropdown">
-                    <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      <i class="fe fe-more-vertical"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                      <a href="#!" class="dropdown-item">
-                        Action
-                      </a>
-                      <a href="#!" class="dropdown-item">
-                        Another action
-                      </a>
-                      <a href="#!" class="dropdown-item">
-                        Something else here
-                      </a>
-                    </div>
-                  </div>
-
-                </div>
-              </div> <!-- / .row -->
-            </div>
-
-            <!-- Footer -->
-            <div class="card-footer card-footer-boxed">
-              <div class="row align-items-center">
-                <div class="col">
-                  <div class="row align-items-center no-gutters">
-                    <div class="col-auto">
-
-                      <!-- Value -->
-                      <small class="mr-2">29%</small>
-
-                    </div>
-                    <div class="col">
-
-                      <!-- Progress -->
-                      <div class="progress progress-sm">
-                        <div class="progress-bar" role="progressbar" style="width: 29%" aria-valuenow="29" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-
-                    </div>
-                  </div> <!-- / .row -->
-                </div>
-                <div class="col-auto">
+    <!-- Column 1 -->
+    <div class="col-12 col-lg-4 d-flex flex-column">  
+      <!-- Main Course -->
+      {% for product in products %}
+        {% if product.id == 411712 %}
+          {% include "dash-product-large" %}
+        {% endif %}
+      {% endfor %}
 
 
-                </div>
-              </div> <!-- / .row -->
-            </div>
-            </div>
+      <!-- Sub Course -->
+      <!-- heading -->
+      <div class="row">
+        <div class="col">
+          <h2>Innovate Mini Courses</h2>
         </div>
-          {% endif %}
-          {% endfor %}
-          {% if paginate.pages > 1 %}
-            {% include "pagination" %}
-          {% endif %}
-        {% endpaginate %}
-      {% endif %}
+      </div>
 
+      <!-- Cards -->
+      {% for product in products %}
+        {% if product.id == 411712 %}
+          {% include "dash-product-small-row" %}
+        {% endif %}
+      {% endfor %} 
+      {% for product in products %}
+        {% if product.id == 411712 %}
+          {% include "dash-product-small-row" %}
+        {% endif %}
+      {% endfor %} 
+      {% for product in products %}
+        {% if product.id == 411712 %}
+          {% include "dash-product-small-row" %}
+        {% endif %}
+      {% endfor %} 
+    </div>
+
+    <!-- Column 2 -->
+    <div class="col-12 col-lg-4 d-flex flex-column">  
+      <!-- Main Course -->
+      {% for product in products %}
+        {% if product.id == 429919 %}
+          {% include "dash-product-large" %}
+        {% endif %}
+      {% endfor %}
+
+
+      <!-- Sub Course -->
+      <!-- heading -->
+      <div class="row">
+        <div class="col">
+          <h2>Influence Mini Courses</h2>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      {% for product in products %}
+        {% if product.id == 429919 %}
+          {% include "dash-product-small-row" %}
+        {% endif %}
+      {% endfor %}
+      {% for product in products %}
+        {% if product.id == 429919 %}
+          {% include "dash-product-small-row" %}
+        {% endif %}
+      {% endfor %}
+      {% for product in products %}
+        {% if product.id == 429919 %}
+          {% include "dash-product-small-row" %}
+        {% endif %}
+      {% endfor %} 
+    </div>
+
+    <!-- Column 3 -->
+    <div class="col-12 col-lg-4 d-flex flex-column">  
+      <!-- Main Course -->
+      {% for product in products %}
+        {% if product.id == 429921 %}
+          {% include "dash-product-large" %}
+        {% endif %}
+      {% endfor %}
+
+
+      <!-- Sub Course -->
+      <!-- heading -->
+      <div class="row">
+        <div class="col">
+          <h2>Sustain Mini Courses</h2>
+        </div>
+      </div>
+
+      <!-- Cards -->
+      {% for product in products %}
+        {% if product.id == 429921 %}
+          {% include "dash-product-small-row" %}
+        {% endif %}
+      {% endfor %} 
+      {% for product in products %}
+        {% if product.id == 429921 %}
+          {% include "dash-product-small-row" %}
+        {% endif %}
+      {% endfor %} 
+      {% for product in products %}
+        {% if product.id == 429921 %}
+          {% include "dash-product-small-row" %}
+        {% endif %}
+      {% endfor %} 
+    </div>
   </div>
 
+  <!-- Misc Courses -->
   <div class="row">
     <div class="col">
-      <h2>Accelerate Mini Courses</h2>
+      <h2>Other Courses</h2>
       
     </div>
   </div>
@@ -131,68 +143,7 @@
             {% if product.id != 429919 and product.id != 411712 and product.id != 429921 %}
                 <div class="col-12 col-lg-4">
 
-                  <!-- Card -->
-                  <div class="card">
-                    <div class="card-body">
-                      <div class="row align-items-center">
-                        <div class="col-auto">
-
-
-                          <!-- Image -->
-                          {% if product.thumbnail_url %}
-                            <a href="{{ product.url }}" class="avatar avatar-4by3">
-                              <img src="{{ product.thumbnail_url }}" alt="..." class="avatar-img rounded">
-                            </a>
-                          {% else %}
-                            <a href="{{ product.url }}" class="avatar avatar-4by3">
-                              <img src="{{ "placeholder.png" | asset_url }}" class="avatar-img rounded"/>
-                            </a>
-                          {% endif %} 
-
-                          <!-- Avatar -->
-                          <!-- <a href="project-overview.html" class="avatar avatar-4by3">
-                            <img src="assets/img/avatars/projects/project-1.jpg" alt="..." class="avatar-img rounded">
-                          </a> -->
-
-                        </div>
-                        <div class="col ml-n2">
-
-                          <!-- Title -->
-                          <h4 class="mb-1">
-                            <a href="project-overview.html">{{ product.title }}<</a>
-                          </h4>
-
-                          <!-- Text -->
-                          <p class="small text-muted mb-0">
-                            {{ product.description | strip_html | truncate: 160 }}
-                            {{ product.completion }}
-                          </p>
-
-                        </div>
-                        <div class="col-auto">
-
-                          <!-- Dropdown -->
-                          <div class="dropdown">
-                            <a href="#" class="dropdown-ellipses dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fe fe-more-vertical"></i>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right">
-                              <a href="#!" class="dropdown-item">
-                                Action
-                              </a>
-                              <a href="#!" class="dropdown-item">
-                                Another action
-                              </a>
-                              <a href="#!" class="dropdown-item">
-                                Something else here
-                              </a>
-                            </div>
-                          </div>
-
-                        </div>
-                      </div> <!-- / .row -->
-                    </div> <!-- / .card-body -->
-                  </div>
+                  {% include "dash-product-small-row" %}
 
                 </div>
               {% endif %}
